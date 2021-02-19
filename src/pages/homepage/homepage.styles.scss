@@ -12,23 +12,23 @@
         margin-bottom: 5px;
     }
     .directory-menu {
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
+        // width: 100%;
+        // display: flex;
+        // flex-wrap: wrap;
+        // justify-content: space-between;
         .first-row {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 5px;
+            // display: flex;
+            // justify-content: space-between;
+            // flex-wrap: wrap;
+            // gap: 5px;
             .menu-item {
-                min-width: 32%;
-                height: 250px;
-                border: 1px solid black;
-                padding: 20px 30px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                // min-width: 32%;
+                // height: 250px;
+                // border: 1px solid black;
+                // padding: 20px 30px;
+                // display: flex;
+                // justify-content: center;
+                // align-items: center;
                 .content {
                     display: flex;
                     flex-direction: column;
@@ -39,18 +39,18 @@
             }
         }
         .second-row {
-            margin-top: 2.5%;
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 5px;
+            // margin-top: 2.5%;
+            // display: flex;
+            // justify-content: space-between;
+            // flex-wrap: wrap;
+            // gap: 5px;
             .menu-item {
-                min-width: 49%; 
-                height: 250px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                border: 1px solid black;
+                // min-width: 49%; 
+                // height: 250px;
+                // display: flex;
+                // justify-content: center;
+                // align-items: center;
+                // border: 1px solid black;
                 .content {
                     display: flex;
                     flex-direction: column;
