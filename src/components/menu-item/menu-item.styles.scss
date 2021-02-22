@@ -1,4 +1,5 @@
 .menu-item {
+    position: relative;
     min-width: 32%;
     height: 250px;
     border: 1px solid black;
@@ -8,10 +9,39 @@
     align-items: center;
     flex: 1 1 auto;
     margin: 10px 10px ;
-    background-size: cover;
-    background-position: center;
+    overflow: hidden;
+    
+    &:hover {
+        & .menu-background {
+           transform: scale(1.5);
+        }
+        & .content {
+            opacity: .9;
+            cursor: pointer;
+        };
+    }
 
     &.large {
         height: 400px;
+    }
+    .menu-background {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        transition-duration: 5s;
+        transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+    
+    }
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+        opacity: .75;
+        transition-duration: .5s;
+
     }
 }
