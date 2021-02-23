@@ -2,7 +2,7 @@
     position: relative;
     min-width: 32%;
     height: 250px;
-    border: 1px solid black;
+    border: 2px solid #212121;
     padding: 20px 30px;
     display: flex;
     justify-content: center;
@@ -42,6 +42,8 @@
         background-color: #fff;
         opacity: .75;
         transition-duration: .5s;
+        border: 2px solid #212121;
+        padding: 20px 30px;
 
     }
 }
