@@ -1,18 +1,31 @@
 .collection-item {
     width: 20%;
     height: 350px;
+    border: 1px solid gray;
     .item-image {
         width: 100%;
-        height: 95%;
-        background-size: 90%;
+        height: 80%;
+        background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
     }
     .item-footer {
         width: 100%;
-        height: 5%;
+        height: 20%;
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
         font-size: 18px; 
+        background-color: rgb(221, 219, 219);
+        border-top: 2px solid gray;
+        .item-name{
+            font-weight: bold;
+            text-align: center;
+        }
+        .item-price {
+            color: crimson;
+            font-weight: bold;
+        }
     }
 }
