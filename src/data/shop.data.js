@@ -1,5 +1,5 @@
 // Data was borrowed from sklepkorzykarza.pl just as a dummy data
-export const SHOP_DATA = [
+const SHOP_DATA = [
     {
         id: 1,
         title: "Hats",
@@ -188,3 +188,5 @@ export const SHOP_DATA = [
 //    price: 4,
 //    imgURL: "",
 // },
+
+export default SHOP_DATA;
