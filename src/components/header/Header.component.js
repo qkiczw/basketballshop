@@ -1,20 +1,24 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
+import './Header.styles.scss';
+
+
+// Assets
+import { ReactComponent as BallIcon } from '../../assets/ball-icon.svg';
 
 
 const Header = () => (
-    <div style={{display: 'flex', justifyContent: 'space-around', alignItems: 'center'}}>
-            <div style={{ width: '90%', height: '1px', border: '1px solid black'}}></div>
-            <h1 style={ {
-                padding: "20px 100px",
-                textAlign: 'center',
-                textTransform: 'uppercase',
-                letterSpacing: '5px'
-                
-                } }>
-                Basketball Shop
-            </h1>
-            <div style={{ width: '90%', height: '1px', border: '1px solid black'}}></div>
-    </div>
+    <header className="header">
+        <Link to={"/"}>
+            <BallIcon className="ball-icon"/> 
+        </Link>
+        <div className="main-menu">
+            <Link className="main-menu-item" to="/shop">shop</Link> 
+            <Link className="main-menu-item" to="/shop">contact</Link>
+        </div>
+    </header>
+    
+    
 )
 
 export default Header;
