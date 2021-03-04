@@ -44,7 +44,6 @@ class SignIn extends React.Component {
                         label='email'
                         onChange={this.handleChange} 
                         value={this.state.email} 
-                        placeholder='Enter your email'
                         required 
                     />
                     <FormInput 
@@ -53,7 +52,6 @@ class SignIn extends React.Component {
                         label='password'
                         onChange={this.handleChange} 
                         value={this.state.password} 
-                        placeholder='Enter your password'
                         required 
                     />
                     <input type='submit' value='submit' />
