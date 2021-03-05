@@ -12,9 +12,12 @@ import { ReactComponent as BallIcon } from '../../assets/ball-icon.svg';
 
 const Header = ({ currentUser }) => (
     <header className="header">
+        <div className='brand-and-welcome'>
         <Link to={"/"}>
             <BallIcon className="ball-icon"/> 
         </Link>
+        <p>{ currentUser ? `Hello ${currentUser.displayName}` : 'Welcome in a Basketball store'}</p>
+        </div>
         <div className="main-menu">
             <Link className="main-menu-item" to="/shop">shop</Link> 
             
@@ -26,6 +29,7 @@ const Header = ({ currentUser }) => (
                 :
                 <Link className="main-menu-item" to="/signin">Sign In</Link> 
             }
+            {console.log(currentUser)}
         </div>
     </header>
     

@@ -5,6 +5,15 @@
     justify-content: space-between;
     align-items: center;
     padding: 25px 100px 50px;
+
+    .brand-and-welcome {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        & > p {
+            font-weight: bold;
+        }
+    }
     
     .ball-icon {
         width: 50px;
