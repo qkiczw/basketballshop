@@ -19,8 +19,7 @@ const Header = ({ currentUser }) => (
         <p>{ currentUser ? `Hello ${currentUser.displayName}` : 'Welcome in a Basketball store'}</p>
         </div>
         <div className="main-menu">
-            <Link className="main-menu-item" to="/shop">shop</Link> 
-            
+            <Link className="main-menu-item" to="/shop">shop</Link>             
             <Link className="main-menu-item" to="/shop">contact</Link>
             {
                 currentUser
@@ -29,7 +28,6 @@ const Header = ({ currentUser }) => (
                 :
                 <Link className="main-menu-item" to="/signin">Sign In</Link> 
             }
-            {console.log(currentUser)}
         </div>
     </header>
     

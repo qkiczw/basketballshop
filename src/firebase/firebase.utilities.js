@@ -22,4 +22,34 @@ const provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({ prompt: 'select_account' });
 export const signInWithGoogle = () => auth.signInWithPopup(provider);
 
+export const createUserProfileFromGoogleAuth = async (userAuth, additionalData) => {
+  if(!userAuth) return;
+  const userRef = firestore.doc(`users/${userAuth.uid}`);
+  const snapShot = await userRef.get();
+  console.log(snapShot);
+
+  if(!snapShot.exists) {
+    const {displayName, email} = userAuth; 
+    const createdTimeStamp = new Date();
+
+    try {
+      await userRef.set( {
+        // If the key and the vaule of the object have the same name we can use (for example in this case):
+        // displayName,
+        // email,
+        //created...
+        
+          displayName: displayName,
+          email: email,
+          createdTimeStamp: createdTimeStamp,
+          ...additionalData
+      } )
+    } catch(error) {
+      console.log(` error creating user`, error);
+    }
+  }
+  return userRef;
+}
+
+
 export default firebase;

@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import './App.css';
 
 // Import auht
-import { auth } from '../src/firebase/firebase.utilities';
+import { auth, createUserProfileFromGoogleAuth } from '../src/firebase/firebase.utilities';
 
 // Components
 import HomePage from './pages/homepage/Homepage.component';
@@ -25,9 +25,9 @@ class App extends React.Component {
 
   componentDidMount() {
 
-    this.unsubscribeFromAuth = auth.onAuthStateChanged( user => {
-      this.setState({ currentUser: user})
-
+    this.unsubscribeFromAuth = auth.onAuthStateChanged( async user => {
+      // this.setState({ currentUser: user})
+      createUserProfileFromGoogleAuth(user);
     })
   }
   
