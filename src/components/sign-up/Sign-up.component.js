@@ -27,10 +27,10 @@ class SignUp extends React.Component {
         if(password !== confirmPassword) {
             alert(`Passwords don't match`);
         }
+        
         try {
             const {user} = await auth.createUserWithEmailAndPassword(email, password);
-            
-            await createUserProfileDocument(user, { displayName });
+            await createUserProfileDocument(user, { displayName: displayName });
 
             this.setState({
                 displayName: '',
@@ -46,8 +46,8 @@ class SignUp extends React.Component {
 
     handleChange = event => {
         event.preventDefault();
-        const {name, vaule} = event.target;
-        this.setState({[name]: vaule});
+        const {name, value} = event.target;
+        this.setState({[name]: value});
     }
 
     render() {
@@ -62,7 +62,7 @@ class SignUp extends React.Component {
                         name='displayName'
                         value={displayName}
                         onChange={this.handleChange}
-                        label='Display Name'
+                        label='Display name'
                         required
                     >
                     </FormInput>
@@ -76,7 +76,7 @@ class SignUp extends React.Component {
                     >
                     </FormInput>
                     <FormInput 
-                        type='text'
+                        type='password'
                         name='password'
                         value={password}
                         onChange={this.handleChange}
@@ -85,7 +85,7 @@ class SignUp extends React.Component {
                     >
                     </FormInput>
                     <FormInput 
-                        type='text'
+                        type='password'
                         name='confirmPassword'
                         value={confirmPassword}
                         onChange={this.handleChange}
