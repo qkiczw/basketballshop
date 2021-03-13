@@ -1,0 +1,10 @@
+.sign-up {
+    background-color: #eeeeee;
+    padding: 50px 25px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    &-title {
+        margin: 25px 0;
+    }
+}

@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import './App.css';
 
 // Import auht
-import { auth, createUserProfileFromGoogleAuth } from '../src/firebase/firebase.utilities';
+import { auth, createUserProfileDocument } from '../src/firebase/firebase.utilities';
 
 // Components
 import HomePage from './pages/homepage/Homepage.component';
@@ -27,7 +27,7 @@ class App extends React.Component {
 
     this.unsubscribeFromAuth = auth.onAuthStateChanged( async userAuth => {
       if(userAuth) {
-        const userRef = await createUserProfileFromGoogleAuth(userAuth);
+        const userRef = await createUserProfileDocument(userAuth);
         userRef.onSnapshot( snapShot => {
           this.setState({
             currentUser: {
@@ -39,7 +39,7 @@ class App extends React.Component {
         })
       }
       else {
-        this.setState({currentUser: userAuth}); // if I log out the userAuth = null !!!
+        this.setState({currentUser: userAuth}); // if I log out the userAuth = null !!! 
       }
     })
   }
