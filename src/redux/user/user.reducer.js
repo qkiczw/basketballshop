@@ -1,5 +1,5 @@
 const INITIAL_STATE = {
-    currentUSer: null
+    currentUser: null,
 }
 
 const userReducer = (state = INITIAL_STATE, action) => {

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import { connect } from  'react-redux';
 import './Header.styles.scss';
 
 // firebase auth
@@ -16,7 +17,7 @@ const Header = ({ currentUser }) => (
         <Link to={"/"}>
             <BallIcon className="ball-icon"/> 
         </Link>
-        <p>{ currentUser ? `Hello ${currentUser.displayName}` : 'Welcome in a Basketball store'}</p>
+        {/* <p>{ currentUser ? `Hello ${currentUser.displayName}` : 'Welcome in a Basketball store'}</p> */}
         </div>
         <div className="main-menu">
             <Link className="main-menu-item" to="/shop">shop</Link>             
@@ -30,8 +31,10 @@ const Header = ({ currentUser }) => (
             }
         </div>
     </header>
-    
-    
-)
+);
 
-export default Header;
+const mapStateToProps = (state ) => ({
+    currentUser:  state.user.currentUser
+})
+
+export default connect(mapStateToProps)(Header);
