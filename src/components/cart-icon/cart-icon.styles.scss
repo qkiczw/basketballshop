@@ -1,0 +1,17 @@
+.cart-icon {
+    position: relative;
+    width: 40px;
+    .shopping-cart-icon {
+        width: 25px;
+    }
+    .item-counter {
+        position: absolute;
+        left: 10px;
+        top: -10px;
+        border: 1px solid crimson;
+        padding: 1px 5px;
+        border-radius: 50%;
+        background-color: crimson;
+        color: #fff;
+    }
+}
