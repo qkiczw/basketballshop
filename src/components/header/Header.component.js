@@ -4,8 +4,7 @@ import { connect } from  'react-redux';
 import './Header.styles.scss';
 
 // firebase auth
-import { auth } from '../../firebase/firebase.utilities';
- 
+import { auth } from '../../firebase/firebase.utilities'; 
 
 // Assets
 import { ReactComponent as BallIcon } from '../../assets/ball-icon.svg';
@@ -35,6 +34,6 @@ const Header = ({ currentUser }) => (
 
 const mapStateToProps = (state ) => ({
     currentUser:  state.user.currentUser,
-})
+});
 
 export default connect(mapStateToProps)(Header);
