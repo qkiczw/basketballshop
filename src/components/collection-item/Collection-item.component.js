@@ -2,6 +2,8 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import './Collection-item.styles.scss';
 
+// Components
+import CustomButton from '../custom-button/Custom-button.component';
 
 const CollectionItem = ({name, price, imgURL}) => (
     <div className="collection-item">
@@ -15,7 +17,7 @@ const CollectionItem = ({name, price, imgURL}) => (
             <span className="item-name">{name}</span>
             <span className="item-price">Price: {price} $</span>
         </div>
-
+        <CustomButton inverted >Add to Cart</CustomButton>
     </div>
 )
 

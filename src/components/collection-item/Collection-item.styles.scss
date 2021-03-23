@@ -1,4 +1,8 @@
 .collection-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
     width: 20%;
     height: 350px;
     border: 1px solid gray;
@@ -8,6 +12,23 @@
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
+        transition-duration: .2s;
+    }
+    .custom-button {
+        display: none;
+        position: absolute; 
+        bottom: 100px;
+        opacity: .7;
+
+    }
+    &:hover {
+        .custom-button {
+            opacity: 1;
+            display: flex;
+        }
+        .item-image {
+           filter: grayscale(1) ;
+        }
     }
     .item-footer {
         width: 100%;
