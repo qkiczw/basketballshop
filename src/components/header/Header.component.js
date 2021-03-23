@@ -5,6 +5,7 @@ import './Header.styles.scss';
 
 // Components
 import CartIcon from '../cart-icon/cart-icon.component';
+import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 
 // firebase auth
 import { auth } from '../../firebase/firebase.utilities'; 
@@ -31,9 +32,9 @@ const Header = ({ currentUser }) => (
                 :
                 <Link className="main-menu-item" to="/signin">Sign In</Link> 
             }
-            <CartIcon />
+            <CartIcon /> 
         </div>
-        
+        <CartDropdown />
     </header>
 );
 
