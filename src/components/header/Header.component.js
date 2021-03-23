@@ -14,7 +14,7 @@ import { auth } from '../../firebase/firebase.utilities';
 import { ReactComponent as BallIcon } from '../../assets/ball-icon.svg';
 
 
-const Header = ({ currentUser }) => (
+const Header = ({ currentUser, cartDropdownIsHidden }) => (
     <header className="header">
         <div className='brand-and-welcome'>
         <Link to={"/"}>
@@ -34,12 +34,19 @@ const Header = ({ currentUser }) => (
             }
             <CartIcon /> 
         </div>
-        <CartDropdown />
+        {cartDropdownIsHidden ? null : <CartDropdown />}
     </header>
 );
 
-const mapStateToProps = (state ) => ({
-    currentUser:  state.user.currentUser,
-});
+// const mapStateToProps = ( state ) => ({
+//     currentUser:  state.user.currentUser,
+//     cartDropdownIsHidden: state.cart.hidden
+// });
+
+// advanced dectructuring from the state (rootreducer)
+const mapStateToProps = ({user: {currentUser}, cart: {hidden}}) => ({
+    currentUser, //because key and value are the same ( currentUser: currentUser) 
+    cartDropdownIsHidden: hidden
+})
 
 export default connect(mapStateToProps)(Header);
