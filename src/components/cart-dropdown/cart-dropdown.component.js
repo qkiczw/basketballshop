@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 
 //Components
 import CustomButton from '../custom-button/Custom-button.component';
-import CartItem from '../cart-item/Cart-tem.component';
+import CartItem from '../cart-item/Cart-Item.component';
 
 
 const cartDropdown = ({cartItems}) => (

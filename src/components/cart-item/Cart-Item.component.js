@@ -1,5 +1,5 @@
 import React from 'react';
-import './Cart-tem.styles.scss';
+import './Cart-Item.styles.scss';
 
 
 const CartItem = ( { item: {id, name, price, imgURL, quantity} } ) => {
@@ -15,7 +15,6 @@ const CartItem = ( { item: {id, name, price, imgURL, quantity} } ) => {
                 <div className='cart-item-price'>
                     ${price} x {quantity}
                 </div>
-                {console.log('id: ', id)}
             </div>
         </div>
     )
