@@ -16,7 +16,13 @@ import CartItem from '../cart-item/Cart-Item.component';
 const cartDropdown = ({cartItems}) => (
     <div className='cart-dropdown'>
         <div className='cart-items'>
-            {cartItems.map( cartItem => <CartItem key={cartItem.id} item={cartItem}/> )}
+            {
+                cartItems.length 
+                ?
+                cartItems.map( cartItem => <CartItem key={cartItem.id} item={cartItem}/> )
+                :
+                <span className='empty-cart-message'>Your Cart is empty!</span>
+            }
         </div>
         <CustomButton className='custom-button'>Checkout</CustomButton>
     </div>
