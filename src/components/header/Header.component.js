@@ -3,6 +3,11 @@ import { Link } from 'react-router-dom';
 import { connect } from  'react-redux';
 import './Header.styles.scss';
 
+// Seletors
+import { createStructuredSelector } from 'reselect';
+import { selectCurrentUSer } from '../../redux/user/user.selectors';
+import { selectCartHidden } from '../../redux/cart/cart.selectors';
+
 // Components
 import CartIcon from '../cart-icon/cart-icon.component';
 import CartDropdown from '../cart-dropdown/cart-dropdown.component';
@@ -38,15 +43,10 @@ const Header = ({ currentUser, cartDropdownIsHidden }) => (
     </header>
 );
 
-// const mapStateToProps = ( state ) => ({
-//     currentUser:  state.user.currentUser,
-//     cartDropdownIsHidden: state.cart.hidden
-// });
-
-// advanced dectructuring from the state (rootreducer)
-const mapStateToProps = ({user: {currentUser}, cart: {hidden}}) => ({
-    currentUser, //because key and value are the same ( currentUser: currentUser) 
-    cartDropdownIsHidden: hidden
+const mapStateToProps = createStructuredSelector({
+    // currentUser, //because key and value are the same ( currentUser: currentUser) 
+    cartDropdownIsHidden: selectCartHidden,
+    currentUser: selectCurrentUSer,
 })
 
 export default connect(mapStateToProps)(Header);
