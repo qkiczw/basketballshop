@@ -28,6 +28,7 @@ const Header = ({ currentUser, cartDropdownIsHidden }) => (
         <p>{ currentUser ? `Hello ${currentUser.displayName}` : 'Welcome in a Basketball store'}</p>
         </div>
         <div className="main-menu">
+            <Link className="main-menu-item" to={"/"}>home</Link>
             <Link className="main-menu-item" to="/shop">shop</Link>             
             <Link className="main-menu-item" to="/shop">contact</Link>
             {
