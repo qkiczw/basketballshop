@@ -16,4 +16,12 @@
             }
         }
     }
+    .checkout-total {
+        display: flex;
+        align-items: center;
+        height: 60px;
+        justify-content: flex-end;
+        border-top: 1px solid darkgray;
+        font-size: 2rem;
+    }
 }
