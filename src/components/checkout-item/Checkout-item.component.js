@@ -10,8 +10,6 @@ import { connect } from 'react-redux'
 
 
 const CheckoutItem = ( {cartItem, clearItem} ) => {
-    console.log('test:',cartItem)
-    console.log('clear:',clearItem)
     const {name, imgURL, price, quantity} = cartItem
     
     return (
