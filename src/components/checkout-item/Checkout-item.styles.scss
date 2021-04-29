@@ -19,6 +19,16 @@
     .quantity {
         width: 23%;
     }
+    .quantity {
+        display: flex;
+        justify-content: flex-start;
+        .arrow {
+            cursor: pointer;
+        }
+        .quantity-value{
+            margin: 0 10px;
+        }
+    }
 
     .remove-button {
         width: 8%;
