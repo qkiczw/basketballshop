@@ -9,8 +9,6 @@ import { connect } from 'react-redux';
 import { selectCollections } from '../../redux/shop/shop.selectors';
 import { createStructuredSelector } from 'reselect';
 
-// Dummy data for preview
-// import SHOP_DATA from '../../data/shop.data';
 
 // Components
 import PreviewCollection from '../../components/preview-collection/Preview-collection.component';
