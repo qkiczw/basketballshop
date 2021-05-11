@@ -4,11 +4,24 @@ import './collection.styles.scss';
 // Components
 import CollectionItem from '../../components/collection-item/Collection-item.component';
 
-// match is added to props because is in the route in a shoppage component
-const CollectionPage = ({ match }) => ( 
+// Redux
+import { connect } from 'react-redux'
+
+//Selectors
+import { sellectCollection } from '../../redux/shop/shop.selectors';
+
+const CollectionPage = ({ collection: {collection} }) => ( 
     <div className='collection'>
-        <h2 className='collection-title'>{match.params.collectionId} collection</h2>
+        <h2 className='collection-title'> Our collection</h2>
+        <div className='collection-items'>
+            {collection.map( item => <CollectionItem item={item} />)}
+        </div>
     </div>
 );
 
-export default CollectionPage;
+
+
+const mapStateToProps = (state, ownProps) => ({
+    collection: sellectCollection(ownProps.match.params.collectionId)(state)
+})
+export default connect(mapStateToProps)(CollectionPage);

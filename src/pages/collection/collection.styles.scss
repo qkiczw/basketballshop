@@ -1,3 +1,17 @@
+.collection-items {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 50px;
+}
 .collection-title {
     text-transform: capitalize ;
+    margin-bottom: 50px;
+}
+.test-item {
+    margin-bottom: 50px;
+}
+.test-item img {
+    width: 100px;
 }
