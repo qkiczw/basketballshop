@@ -13,7 +13,8 @@ import CollectionPage from '../collection/collection.component';
 const Shop = ({ match }) => (
     <div className="shop-page">
         {/* <CollectionsOverview /> */}
-        <Route exact path={`${match.path}`} component={CollectionsOverview}/> // match.path - much flexible than hard coded '/shop' path
+        {/* { match.path - much flexible than hard coded '/shop' path } */}
+        <Route exact path={`${match.path}`} component={CollectionsOverview}/> 
         <Route path={`${match.path}/:collectionId`} component={CollectionPage}/>
     </div>
 )
