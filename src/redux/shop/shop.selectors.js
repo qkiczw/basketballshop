@@ -1,5 +1,8 @@
 import { createSelector } from 'reselect';
 
+// Lodash memoize
+import memoize from 'lodash.memoize'; //memoize prevent selectCollection from re rendering when it is calling again with the same parameter
+
 const COLLECTION_ID_MAP = {
     hats:  100,
     shoes: 200,
@@ -16,7 +19,9 @@ export const selectCollections = createSelector(
     shop => shop.sections
 )
 
-export const sellectCollection = collectionUrlParam => createSelector (
-    [selectCollections],
-    collections => collections.find( collection => collection.id === COLLECTION_ID_MAP[collectionUrlParam])
-)
+export const sellectCollection = memoize(
+    (collectionUrlParam) => createSelector (
+        [selectCollections],
+        collections => collections.find( collection => collection.id === COLLECTION_ID_MAP[collectionUrlParam])
+    )
+);
