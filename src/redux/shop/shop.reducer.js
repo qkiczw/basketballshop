@@ -3,7 +3,7 @@ const INITIAL_STATE = {
         {
             id: 100,
             title: "Hats",
-            collection: [
+            items: [
                 {
                     id: 1,
                     name: "Jordan Pro Jumpman Snapback",
@@ -39,7 +39,7 @@ const INITIAL_STATE = {
         {
             id: 200,
             title: "Shoes",
-            collection: [
+            items: [
                 {
                     id: 6,
                     name: "Air Jordan XXXV",
@@ -75,7 +75,7 @@ const INITIAL_STATE = {
         {
             id: 300,
             title: "Balls",
-            collection: [
+            items: [
                 {
                     id: 11,
                     name: "spalding TF-1000 Legacy",
@@ -111,7 +111,7 @@ const INITIAL_STATE = {
         {
             id: 400,
             title: "Accessories",
-            collection: [
+            items: [
                 {
                     id: 16,
                     name: "Crep zestaw do czyszczenia",
@@ -147,7 +147,7 @@ const INITIAL_STATE = {
         {
             id: 500,
             title: "Other",
-            collection: [
+            items: [
                 {
                     id: 21,
                     name: "Hypervolt Bluetooth",

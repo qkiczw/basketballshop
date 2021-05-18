@@ -10,14 +10,17 @@ import { connect } from 'react-redux'
 //Selectors
 import { sellectCollection } from '../../redux/shop/shop.selectors';
 
-const CollectionPage = ({ collection: {collection} }) => ( 
+const CollectionPage = ({ collection }) => {
+    const {title,  items} = collection;
+
+    return( 
     <div className='collection'>
-        <h2 className='collection-title'> Our collection</h2>
+        <h2 className='collection-title'> {title} </h2>
         <div className='collection-items'>
-            {collection.map( item => <CollectionItem item={item} />)}
+            { items.map( item => <CollectionItem key={item.id} item={item} />)}
         </div>
     </div>
-);
+)};
 
 
 

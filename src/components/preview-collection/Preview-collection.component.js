@@ -4,11 +4,11 @@ import './preview-collection.styles.scss';
 // Components
 import CollectionItem from '../collection-item/Collection-item.component';
 
-const PreviewCollection = ( {title, collection} ) => (
+const PreviewCollection = ( {title, items} ) => (
         <div className="collection-preview-container">
         <h1 className="collection-title">{title.toUpperCase()}</h1>
         <div className="preview-items">
-            {collection.map( (item) => (
+            {items.map( (item) => (
                 <CollectionItem key={item.id} item={item} className="Item" />
             ) ).filter( (item, idx) => idx < 4)}
 
