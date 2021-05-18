@@ -178,8 +178,80 @@ const INITIAL_STATE = {
                     price: 2000,
                     imgURL: "Normatec Pulse 2.0",
                 },
+                {
+            id: 100,
+            title: "Hats",
+            items: [
+                {
+                    id: 1,
+                    name: "Jordan Pro Jumpman Snapback",
+                    price: 34,
+                    imgURL: "https://blob.sxv.pl/shops/media/f1000/2020/nike/169203/czapka-jordan-pro-jumpman-snapback-ar2118-015-5e999d12c0552.jpg",
+                },
+                {
+                    id: 2,
+                    name: "",
+                    price: 90,
+                    imgURL: "",
+                },
+                {
+                    id: 3,
+                    name: "",
+                    price: 90,
+                    imgURL: "",
+                },
+                {
+                    id: 4,
+                    name: "",
+                    price: 90,
+                    imgURL: "",
+                },
+                {
+                    id: 5,
+                    name: "",
+                    price: 90,
+                    imgURL: "",
+                },
             ]
-        }
+        },
+            ]
+        },
+        {
+            id: 600,
+            title: "Shirts",
+            items: [
+                {
+                    id: 1,
+                    name: "Jordan Statement Swingman Los Angeles Lakers Lebron",
+                    price: 74,
+                    imgURL: "https://blob.sxv.pl/shops/media/f1000/2021/nike/191650/koszulka-statement-swingman-jrsy-plr-los-angeles-lakers-ey2b7bxap-lakjl-6090ffbb7afdc.jpg",
+                },
+                {
+                    id: 2,
+                    name: "Nike NBA Swingman Jersey James Harden",
+                    price: 80,
+                    imgURL: "https://blob.sxv.pl/shops/media/f1000/2020/nike/182130/hou-m-nk-swgmn-jsy-icon-20-cw3666-665-60112df90cdd0.jpg",
+                },
+                {
+                    id: 3,
+                    name: "Nike NBA Swingman Jersey Luka Dončić",
+                    price: 75,
+                    imgURL: "https://blob.sxv.pl/shops/media/f1000/2020/nike/182112/dal-m-nk-swgmn-jsy-ce-20-cn1723-101-600acb2a5666b.jpg",
+                },
+                {
+                    id: 4,
+                    name: "Mitchell & Ness NBA Swingman Jerseys Chicago Bulls - Dennis Rodman",
+                    price: 91,
+                    imgURL: "https://blob.sxv.pl/shops/media/f1000/2020/mitchell-ness/181017/koszulka-mitchell-ness-nba-swingman-jerseys-chicago-bulls-dennis-rodman-91-red-smjygs18154-cbuscar9-5fc74e4f390af.jpg",
+                },
+                {
+                    id: 5,
+                    name: "Nike NBA Kyrie Irving Brooklyn Nets Icon Edition Swingman",
+                    price: 80,
+                    imgURL: "https://blob.sxv.pl/shops/media/f1000/2020/nike/171118/koszulka-swingman-icon-jersey-player-irving-kyrie-ez2b7bz2p-nynki-5f0c1a1357fba.jpg",
+                },
+            ]
+        },
     ]
 };
 

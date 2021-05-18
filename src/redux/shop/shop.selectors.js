@@ -8,7 +8,8 @@ const COLLECTION_ID_MAP = {
     shoes: 200,
     balls: 300,
     accessories: 400,
-    other: 500
+    other: 500,
+    shirts: 600
 }
 
 
