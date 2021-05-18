@@ -1,17 +1,19 @@
-.collection-items {
+.collection-page {
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 50px;
-}
-.collection-title {
-    text-transform: capitalize ;
-    margin-bottom: 50px;
-}
-.test-item {
-    margin-bottom: 50px;
-}
-.test-item img {
-    width: 100px;
-}
+    flex-direction: column;
+  
+    .title {
+      font-size: 38px;
+      margin: 0 auto 30px;
+    }
+  
+    .items {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-gap: 10px;
+  
+      & .collection-item {
+        margin-bottom: 30px;
+      }
+    }
+  }
