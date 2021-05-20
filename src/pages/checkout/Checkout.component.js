@@ -3,6 +3,7 @@ import './checkout.styles.scss';
 
 // Components
 import CheckoutItem from '../../components/checkout-item/Checkout-item.component';
+import StripeButton from '../../components/stripe-button/Stripe-button.component';
 
 // Redux 
 import { connect } from 'react-redux';
@@ -37,6 +38,9 @@ const CheckoutPage = ({cartItems, cartTotal}) => (
         </div>
         <div className='checkout-total'>
             <span>TOTAL: ${cartTotal}</span>
+        </div>
+        <div>
+            <StripeButton />
         </div>
     </div>
 );
