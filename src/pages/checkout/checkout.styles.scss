@@ -24,4 +24,19 @@
         border-top: 1px solid darkgray;
         font-size: 2rem;
     }
+    .test-warning {
+        text-align: center;
+        margin-top: 40px;
+        font-size: 24px;
+        color: red;
+        span {
+            font-weight: bold;
+        }
+    }
+    button {
+       float: right;
+       margin: 50px 0;
+    }
+    
+
 }
