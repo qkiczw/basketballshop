@@ -16,7 +16,7 @@ import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 import { auth } from '../../firebase/firebase.utilities'; 
 
 // Assets
-import { ReactComponent as BallIcon } from '../../assets/ball-icon.svg';
+import { ReactComponent as BallIcon } from '../../assets/basketball-svgrepo-com.svg';
 
 
 const Header = ({ currentUser, cartDropdownIsHidden }) => (
