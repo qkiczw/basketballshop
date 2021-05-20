@@ -17,7 +17,7 @@ const CheckoutPage = ({cartItems, cartTotal}) => (
     <div className='checkout-page'>
         <div className='checkout-header'>
             <div className='header-block'>
-                <span>Produckt</span>
+                <span>Product</span>
             </div>
             <div className='header-block'>
                 <span>Description</span>
@@ -33,7 +33,6 @@ const CheckoutPage = ({cartItems, cartTotal}) => (
             </div>    
         </div>
         <div className='checkout-items'>
-            {/* {cartItems.map(item => <p key={item.id}>{item.name}</p>)} */}
             {cartItems.map( item => <CheckoutItem key={item.id} cartItem={item} /> )}
         </div>
         <div className='checkout-total'>
