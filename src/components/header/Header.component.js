@@ -1,7 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from  'react-redux';
-import './Header.styles.scss';
+
 
 // Seletors
 import { createStructuredSelector } from 'reselect';
@@ -13,11 +12,15 @@ import CartIcon from '../cart-icon/cart-icon.component';
 import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 
 // Styled components
+import './Header.styles.scss';
 import { 
     HeaderContainer, 
     LogoContainer, 
     LogoAndWelcomeContainer,
-    WelcomeTextContainer 
+    WelcomeTextContainer,
+    OptionLink,
+    OptionDiv,
+    MainMenuContainer
     } from './header.styles';
 
 // firebase auth
@@ -28,28 +31,28 @@ import { ReactComponent as BallIcon } from '../../assets/basketball-svgrepo-com.
 
 
 const Header = ({ currentUser, cartDropdownIsHidden }) => (
-    <HeaderContainer className="header">
+    <HeaderContainer>
         <LogoAndWelcomeContainer>
-        <LogoContainer to={"/"}>
-            <BallIcon className="ball-icon"/> 
-        </LogoContainer>
-        <WelcomeTextContainer>
-            Basketball store
-        </WelcomeTextContainer>
+            <LogoContainer to={"/"}>
+                <BallIcon/> 
+            </LogoContainer>
+            <WelcomeTextContainer>
+                Basketball store
+            </WelcomeTextContainer>
         </LogoAndWelcomeContainer>
-        <div className="main-menu">
-            <Link className="main-menu-item" to={"/"}>home</Link>
-            <Link className="main-menu-item" to="/shop">shop</Link>             
-            <Link className="main-menu-item" to="/shop">contact</Link>
+        <MainMenuContainer>
+            <OptionLink to={"/"}>home</OptionLink>
+            <OptionLink to="/shop">shop</OptionLink>             
+            <OptionLink to="/shop">contact</OptionLink>
             {
                 currentUser
                 ?
-                <div className='main-menu-item main-menu-item-sign-out' onClick={ ()=> auth.signOut() } >Sign Out</div>
+                <OptionDiv onClick={ ()=> auth.signOut() } >Sign Out</OptionDiv>
                 :
-                <Link className="main-menu-item" to="/signin">Sign In</Link> 
+                <OptionLink to="/signin">Sign In</OptionLink> 
             }
             <CartIcon /> 
-        </div>
+        </MainMenuContainer>
         {cartDropdownIsHidden ? null : <CartDropdown />}
     </HeaderContainer>
 );
