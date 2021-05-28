@@ -19,7 +19,6 @@ import {
     LogoAndWelcomeContainer,
     WelcomeTextContainer,
     OptionLink,
-    OptionDiv,
     MainMenuContainer
     } from './header.styles';
 
@@ -47,7 +46,7 @@ const Header = ({ currentUser, cartDropdownIsHidden }) => (
             {
                 currentUser
                 ?
-                <OptionDiv onClick={ ()=> auth.signOut() } >Sign Out</OptionDiv>
+                <OptionLink as='div' onClick={ ()=> auth.signOut() } >Sign Out</OptionLink>
                 :
                 <OptionLink to="/signin">Sign In</OptionLink> 
             }

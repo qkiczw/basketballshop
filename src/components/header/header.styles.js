@@ -1,16 +1,5 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-
-const OptionStyles = css`
-    padding:  0 25px;
-        text-transform: uppercase;
-        text-decoration: none;
-        font-size: 20px;
-        font-weight: bolder;
-        color: black ;
-        cursor: pointer;
-
-`;
 
 export const HeaderContainer = styled.header`
     position: relative;
@@ -45,9 +34,12 @@ export const MainMenuContainer = styled.nav`
 `;
 
 export const OptionLink = styled(Link)`
-    ${OptionStyles}
+    padding: 0 25px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bolder;
+    color: black ;
+    cursor: pointer;
 `;
 
-export const OptionDiv = styled(Link)`
-    ${OptionStyles}
-`;
