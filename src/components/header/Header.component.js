@@ -12,6 +12,14 @@ import { selectCartHidden } from '../../redux/cart/cart.selectors';
 import CartIcon from '../cart-icon/cart-icon.component';
 import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 
+// Styled components
+import { 
+    HeaderContainer, 
+    LogoContainer, 
+    LogoAndWelcomeContainer,
+    WelcomeTextContainer 
+    } from './header.styles';
+
 // firebase auth
 import { auth } from '../../firebase/firebase.utilities'; 
 
@@ -20,13 +28,15 @@ import { ReactComponent as BallIcon } from '../../assets/basketball-svgrepo-com.
 
 
 const Header = ({ currentUser, cartDropdownIsHidden }) => (
-    <header className="header">
-        <div className='brand-and-welcome'>
-        <Link to={"/"}>
+    <HeaderContainer className="header">
+        <LogoAndWelcomeContainer>
+        <LogoContainer to={"/"}>
             <BallIcon className="ball-icon"/> 
-        </Link>
-        <p>{ currentUser ? `Hello ${currentUser.displayName}` : 'Welcome in a Basketball store'}</p>
-        </div>
+        </LogoContainer>
+        <WelcomeTextContainer>
+            Basketball store
+        </WelcomeTextContainer>
+        </LogoAndWelcomeContainer>
         <div className="main-menu">
             <Link className="main-menu-item" to={"/"}>home</Link>
             <Link className="main-menu-item" to="/shop">shop</Link>             
@@ -41,7 +51,7 @@ const Header = ({ currentUser, cartDropdownIsHidden }) => (
             <CartIcon /> 
         </div>
         {cartDropdownIsHidden ? null : <CartDropdown />}
-    </header>
+    </HeaderContainer>
 );
 
 const mapStateToProps = createStructuredSelector({
