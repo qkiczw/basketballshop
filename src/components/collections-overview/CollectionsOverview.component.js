@@ -1,5 +1,4 @@
 import React from 'react';
-// import './collectionsOverview.styles.scss';
 
 // Redux
 import { connect } from 'react-redux';

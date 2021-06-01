@@ -1,5 +1,4 @@
 import React from 'react';
-import './Custom-button.styles.scss';
 
 // Styled Components
 import { CustomButtonContainer } from './custom-button.styles'
