@@ -1,5 +1,7 @@
 import React from 'react';
-import './footer.styles.scss';
+
+// Styled Components
+import { FooterContainer } from './footer-styles';
 
 const Footer = () => {
     const DATE = new Date()
@@ -7,9 +9,9 @@ const Footer = () => {
 
     return(
     <>
-        <div className='footer-container'>
+        <FooterContainer>
             <span>Baskeball Shop &copy; {accualYear}</span>
-        </div>
+        </FooterContainer>
     </>
 )};
 
