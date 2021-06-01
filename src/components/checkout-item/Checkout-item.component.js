@@ -1,5 +1,5 @@
 import React from 'react';
-import './Checkout-item.styles.scss';
+// import './Checkout-item.styles.scss';
 
 // Styled Components
 import {
