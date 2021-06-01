@@ -1,21 +1,28 @@
 import React from 'react';
-import './Cart-Item.styles.scss';
+// import './Cart-Item.styles.scss';
 
+// Styled Components
+import {
+    CartItemContainer,
+    CartItemImage,
+    CartItemDetails
 
-const CartItem = ( { item: {id, name, price, imgURL, quantity} } ) => {
+} from './cart-item.styles';
+
+const CartItem = ( { item: {name, price, imgURL, quantity} } ) => {
 
     return(
-        <div className='cart-item'>
-            <img className='cart-item-image' src={imgURL}/>
-            <div className='cart-item-details'>
-                <div className='cart-item-name'>
+        <CartItemContainer>
+            <CartItemImage src={imgURL} alt='Item' />
+            <CartItemDetails>
+                <span>
                     {name}
-                </div>
-                <div className='cart-item-price'>
+                </span>
+                <span>
                     ${price} x {quantity}
-                </div>
-            </div>
-        </div>
+                </span>
+            </CartItemDetails>
+        </CartItemContainer>
     )
 }
 

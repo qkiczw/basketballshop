@@ -5,7 +5,6 @@ export const CheckoutItemContainer = styled.div`
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 50px 0;
 `;
 
 export const ImageContainer = styled.div`
