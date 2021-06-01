@@ -1,5 +1,5 @@
 import React from 'react';
-import './cart-dropdown.styles.scss';
+// import './cart-dropdown.styles.scss';
 
 // Router
 import { withRouter } from 'react-router-dom';
@@ -13,26 +13,35 @@ import { createStructuredSelector} from 'reselect';
 import { selectCartItems } from '../../redux/cart/cart.selectors';
 
 //Components
-import CustomButton from '../custom-button/Custom-button.component';
 import CartItem from '../cart-item/Cart-Item.component';
+
+// Styled Components
+import {
+    CartDropdownContainer,
+    CartItemsContainer,
+    CartDropdownButton,
+    EmptyCartMessageContainer
+} from './cart-dropdown.styles.js'
 
 
 const cartDropdown = ({cartItems, history, dispatch }) => (
-    <div className='cart-dropdown'>
-        <div className='cart-items'>
+    <CartDropdownContainer>
+        <CartItemsContainer>
             {
                 cartItems.length 
                 ?
                 cartItems.map( cartItem => <CartItem key={cartItem.id} item={cartItem}/> )
                 :
-                <span className='empty-cart-message'>Your Cart is empty!</span>
+                <EmptyCartMessageContainer >Your Cart is empty!</EmptyCartMessageContainer>
             }
-        </div>
-        <CustomButton className='custom-button' onClick={ ()=> {
+        </CartItemsContainer>
+        <CartDropdownButton onClick={ ()=> {
             history.push('/checkout');
             dispatch(toogleCartHidden()); //connect pass dispatch to props if we dont supply second argument in it (just for one action?)
-            }  }>Checkout</CustomButton>
-    </div>
+            }  }>
+            Checkout
+        </CartDropdownButton>
+    </CartDropdownContainer>
 
 );
 
