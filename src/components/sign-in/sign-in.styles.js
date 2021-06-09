@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 
 export const SignInContainer = styled.div`
-    background-color: #eeeeee;
-    padding: 50px 25px;
-    width: 50 0px;
     display: flex;
     flex-direction: column;
+    width: 450px;
+    background-color: #eeeeee;
+    padding: 50px 25px 25px;
+    margin-bottom: 50px;
 `;
 
 export const TitleContainer = styled.h2`
