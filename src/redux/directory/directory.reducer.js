@@ -6,21 +6,18 @@ const INITIAL_STATE = {
             title: 'shoes',
             bgImgUrl: 'https://cdn.pixabay.com/photo/2015/10/29/01/24/shoes-1011596_960_720.jpg',
             id: 1,
-            size: 'normal', 
             linkURL: 'shop/shoes'
         },
         {
             title: 'shirts',
             bgImgUrl: 'https://cdn.nba.com/manage/2020/10/GettyImages-1182741599-784x523.jpg',
             id: 2,
-            size: 'normal', 
             linkURL: 'shop/shirts'
         },
         {   
             title: 'balls',
             bgImgUrl: 'https://image.freepik.com/free-photo/basketball-ball-close-up-dark-black-background-basketball-concept_93675-80969.jpg',
             id: 3,
-            size: 'normal', 
             linkURL: 'shop/balls'
         },
         {
