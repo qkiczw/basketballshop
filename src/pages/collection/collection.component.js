@@ -1,8 +1,14 @@
 import React from 'react';
-import './collection.styles.scss';
 
 // Components
 import CollectionItem from '../../components/collection-item/Collection-item.component';
+
+// Styled Components
+import {
+    CollectionPageContainer,
+    CollectionTitle,
+    CollectionItems
+} from './collection.styles'
 
 // Redux
 import { connect } from 'react-redux'
@@ -14,12 +20,12 @@ const CollectionPage = ({ collection }) => {
     const {title,  items} = collection;
 
     return( 
-    <div className='collection-page'>
-        <h2 className='title'> {title} </h2>
-        <div className='items'>
+        <CollectionPageContainer>
+        <CollectionTitle> {title} </CollectionTitle>
+        <CollectionItems>
             { items.map( item => <CollectionItem key={item.id} item={item} />)}
-        </div>
-    </div>
+        </CollectionItems>
+    </CollectionPageContainer>
 )};
 
 
