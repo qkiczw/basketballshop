@@ -15,7 +15,7 @@ import { selectCurrentUSer } from './redux/user/user.selectors';
 
 // Components
 import HomePage from './pages/homepage/Homepage.component';
-import Shop from './pages/shop/Shoppage.component';
+import ShopPage from './pages/shop/Shoppage.component';
 import Header from './components/header/Header.component';
 import Footer from './components/footer/Footer.component';
 import Dummy from './pages/dummy/Dummy.comoponent';
@@ -57,7 +57,7 @@ class App extends React.Component {
         <Header/>
         <Switch>
           <Route exact path='/' component={HomePage} />
-          <Route path='/shop' component={Shop} />
+          <Route path='/shop' component={ShopPage} />
           <Route path='/signin' render={ () => this.props.currentUser ? (<Redirect to="/"/>) : (<SingInAndSignUpPage />)} />
           <Route exact path='/checkout' component={CheckoutPage} />
         </Switch>
