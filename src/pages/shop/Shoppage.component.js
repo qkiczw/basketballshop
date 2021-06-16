@@ -11,8 +11,19 @@ import CollectionPage from '../collection/collection.component';
 // Styled Components
 import { ShopPageContainer } from './shoppage.styles';
 
-class ShopPage extends React.Component {
+// Firebase utils
+import { firestore, convertColelctionSnapshotToMap } from '../../firebase/firebase.utilities';
 
+class ShopPage extends React.Component {
+    unsubscribeFromSnapshot = null;
+
+    componentDidMount() {
+        const collectionRef = firestore.collection('collections');
+
+        collectionRef.onSnapshot( async snapshot => {
+            convertColelctionSnapshotToMap(snapshot);
+        })
+    }
 
     render() {
         

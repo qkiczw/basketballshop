@@ -14,6 +14,23 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
+
+export const convertColelctionSnapshotToMap = ( collections ) => {
+  const transformedCollection = collections.docs.map( doc => {
+    const {title, items} = doc.data();
+
+    return {
+      routeName: encodeURI(title.toLowerCase()),
+      id: doc.id,
+      title,
+      items,
+      
+    }
+  })
+
+  console.log(transformedCollection);
+}
+
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
@@ -50,6 +67,7 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   return userRef;
 
 }
+
 
 export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => { //CollectionKey is the name of the collection and obcject are the items to add
  const collectionRef = firestore.collection(collectionKey);
