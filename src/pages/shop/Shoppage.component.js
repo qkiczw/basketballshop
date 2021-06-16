@@ -11,6 +11,10 @@ import CollectionPage from '../collection/collection.component';
 // Styled Components
 import { ShopPageContainer } from './shoppage.styles';
 
+// Redux
+import { connect } from 'react-redux';
+import { updateCollections } from '../../redux/shop/shop.actions';
+
 // Firebase utils
 import { firestore, convertColelctionSnapshotToMap } from '../../firebase/firebase.utilities';
 
@@ -18,10 +22,14 @@ class ShopPage extends React.Component {
     unsubscribeFromSnapshot = null;
 
     componentDidMount() {
+
+        const {updateCollections} = this.props;
+
         const collectionRef = firestore.collection('collections');
 
-        collectionRef.onSnapshot( async snapshot => {
-            convertColelctionSnapshotToMap(snapshot);
+        this.unsubscribeFromSnapshot = collectionRef.onSnapshot( async snapshot => {
+            const collectionsMap = convertColelctionSnapshotToMap(snapshot);
+            updateCollections(collectionsMap);
         })
     }
 
@@ -42,4 +50,8 @@ class ShopPage extends React.Component {
     
 }
 
-export default ShopPage;
+const mapDispatchToProps = dispatch =>( {
+    updateCollections: collectionsMap => dispatch(updateCollections(collectionsMap))
+})
+
+export default connect(null, mapDispatchToProps)(ShopPage);
