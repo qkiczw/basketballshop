@@ -23,7 +23,7 @@ export const selectCollections = createSelector(
 
 export const selectCollectionsForPreview = createSelector(
     [selectCollections],
-    collections => Object.keys(collections).map( key => collections[key]) // hard to understand - lesson: 12 movie 
+    collections => collections ? Object.keys(collections).map( key => collections[key]) : [] // hard to understand - lesson: 12 movie 
 )
 
 // export const sellectCollection = memoize(
