@@ -4,7 +4,7 @@ export const CollectionPreviewContainer = styled.div`
     margin: 50px 0;
 `;
 
-export const CollectionTitle = styled.div`
+export const CollectionTitle = styled.h2`
     font-size: 28px;
     margin-bottom: 25px;
     cursor: pointer;

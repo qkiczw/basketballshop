@@ -1,5 +1,8 @@
 import React from 'react';
 
+// React Router
+import { withRouter } from 'react-router-dom';
+
 // Components
 import CollectionItem from '../collection-item/Collection-item.component';
 
@@ -10,9 +13,9 @@ import {
     PreviewItems
 } from './preview-collection.styles'
 
-const PreviewCollection = ( {title, items} ) => (
+const PreviewCollection = ( {title, items, history, match, routeName} ) => (
         <CollectionPreviewContainer>
-        <CollectionTitle>{title.toUpperCase()}</CollectionTitle>
+        <CollectionTitle onClick={() => history.push(`${match.path}/${routeName}`)}>{title.toUpperCase()}</CollectionTitle>
         <PreviewItems>
             {items.map( (item) => (
                 <CollectionItem key={item.id} item={item} className="Item" />
@@ -22,4 +25,4 @@ const PreviewCollection = ( {title, items} ) => (
     </CollectionPreviewContainer>
 )
 
-export default PreviewCollection;
+export default withRouter(PreviewCollection);
